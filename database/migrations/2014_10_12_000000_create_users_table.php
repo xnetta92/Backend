@@ -13,10 +13,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('firt_name');
+            $table->string('last_name');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('city');
+            #$table->string('state');
+            $table->integer('zip');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password'); # << hashing here?
+            $table->enum('role', [ 'customer', 'manager', 'admin'])->default('customer');
             $table->rememberToken();
             $table->timestamps();
         });
