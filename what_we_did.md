@@ -19,3 +19,7 @@ edit User model db structure
 `php artisan make:seeder DefaultAdmin`
 create default admin user 
 
+make userstore request 
+make auth controller
+add api routes
+
